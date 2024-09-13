@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 function App() {
 
+  //set default state for placeholder values
   const [personal, setPersonal] = useState([{
     name: 'Jane Doe',
     email: 'janedoe@gmail.com',
@@ -33,9 +34,9 @@ function App() {
     <>
       <div className="cv-container">
         <div className="editing-section">
-        <Card title="Personal"><Personal/></Card>
-        <Card title="Education"><Education/></Card>
-        <Card title="Experience"><Experience/></Card>
+        <Card title="Personal"><Personal state={personal} setState={setPersonal}/></Card>
+        <Card title="Education"><Education state={education} setState={setEducation}/></Card>
+        <Card title="Experience"><Experience state={experience} setState={setExperience}/></Card>
         </div>
         <div className="preview-section">
         <Resume personal={personal} education={education} experience={experience}/>

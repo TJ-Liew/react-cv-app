@@ -1,20 +1,15 @@
 import React from 'react'
 import Input from './Input'
-import AddButton from './AddButton'
-import DeleteButton from './DeleteButton'
+import TextArea from './TextArea'
 
-const Personal = () => {
+const Personal = ({state, setState}) => {
     return (
         <>
             <div className="input">
-                <Input label="Name" type="text"></Input>
-                <Input label="Email" type="email"></Input>
-                <Input label="Phone Number" type="tel"></Input>
-                <Input label="Summary" type="text"></Input>
-            </div>
-            <div className="button-row">
-                <AddButton/>
-                <DeleteButton/>
+                <Input label="Name" type="text" index={0} state={state} setState={setState} property="name"></Input>
+                <Input label="Email" type="email" index={0} state={state} setState={setState} property="email"></Input>
+                <Input label="Phone Number" type="tel" index={0} state={state} setState={setState} property="phoneNumber"></Input>
+                <TextArea label="Summary" type="text" index={0} state={state} setState={setState} property="summary"></TextArea>
             </div>
         </>
     )
